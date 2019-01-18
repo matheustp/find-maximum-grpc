@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package find_maximum;
+
+option go_package="fmpb";
+
+message FindMaximumRequest {
+    int32 num = 1;
+}
+
+message FindMaximumResponse {
+    int32 max = 1;
+}
+
+service FindMaximumService {
+    rpc FindMaximum(stream FindMaximumRequest) returns (stream FindMaximumResponse){};
+}
